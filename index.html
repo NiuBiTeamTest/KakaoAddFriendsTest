@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kakao SDK Test</title>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script>
+  // Initialize Kakao SDK with your app key
+  Kakao.init('088315abf4fca4a328cf7c82a89c491e');
+
+  // Function to check if Kakao SDK is initialized
+  function checkKakaoInitialization() {
+    if (Kakao.isInitialized()) {
+      alert('Kakao SDK is initialized successfully!');
+    } else {
+      alert('Failed to initialize Kakao SDK. Please check your app key.');
+    }
+  }
+</script>
+</head>
+<body>
+  <h1>Kakao SDK Test</h1>
+  <button onclick="checkKakaoInitialization()">Check Initialization</button>
+</body>
+</html>
