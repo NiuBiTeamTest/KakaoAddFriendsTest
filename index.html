@@ -1,57 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kakao SDK Test</title>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.1/kakao.min.js"
-  integrity="sha384-kDljxUXHaJ9xAb2AzRd59KxjrFjzHa5TAoFQ6GbYTCAG0bjM55XohjjDT7tDDC01" crossorigin="anonymous"></script>
-<script>
-  Kakao.init('088315abf4fca4a328cf7c82a89c491e'); // Enter your app's JavaScript key
-</script>
-
-<a id="kakao-login-btn" href="javascript:loginWithKakao()">
-  <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
-    alt="Kakao login button" />
-</a>
-<p id="token-result"></p>
-
-<script>
-  function loginWithKakao() {
-    Kakao.Auth.authorize({
-      redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
-    });
-  }
-
-  // Sample UI code for the demo from here
-  displayToken()
-  function displayToken() {
-    var token = getCookie('authorize-access-token');
-
-    if(token) {
-      Kakao.Auth.setAccessToken(token);
-      Kakao.Auth.getStatusInfo()
-        .then(function(res) {
-          if (res.status === 'connected') {
-            document.getElementById('token-result').innerText
-              = 'login success, token: ' + Kakao.Auth.getAccessToken();
-          }
-        })
-        .catch(function(err) {
-          Kakao.Auth.setAccessToken(null);
-        });
-    }
-  }
-
-  function getCookie(name) {
-    var parts = document.cookie.split(name + '=');
-    if (parts.length === 2) { return parts[1].split(';')[0]; }
-  }
-</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;  /* 修改为 flex-start 以确保图片从顶部开始显示 */
+            justify-content: center;
+            background: #f0f0f0;
+        }
+        img {
+            width: 100%;    /* 图片宽度为100% */
+            max-width: 600px;    /* 最大宽度为600px */
+            height: auto;    /* 高度自动 */
+        }
+    </style>
 </head>
 <body>
-  <h1>Kakao SDK Test</h1>
-  <button onclick="checkKakaoInitialization()">Check Initialization</button>
+    <img src="落地页-韩文.png" alt="Promotional Image">
 </body>
 </html>
