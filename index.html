@@ -14,6 +14,15 @@
             justify-content: flex-start;  /* 从顶部开始显示内容 */
             background: #f0f0f0;
         }
+        .fixed-bottom {
+            position: fixed;  /* 固定位置 */
+            bottom: 0;  /* 在页面底部 */
+            left: 0;  /* 左对齐 */
+            right: 0;  /* 右对齐 */
+            width: 100%;  /* 宽度100% */
+            max-width: 1024px;  /* 最大宽度为600px */
+            margin: 0 auto; /* 水平居中 */
+        }
         img {
             width: 100%;    /* 图片宽度为100% */
             max-width: 1024px;    /* 最大宽度为600px */
@@ -32,8 +41,9 @@
     <a href="https://google.com" target="_blank">
         <img src="1.png" alt="Promotional Image">
     </a>
-    <a href="https://google.com" target="_blank">
         <img src="2.png" alt="Second Promotional Image">
+    <a href="https://google.com" target="_blank">
+        <img src="点击.png" class="fixed-bottom" alt="Promotional Image Bottom">
     </a>
 </body>
 </html>
