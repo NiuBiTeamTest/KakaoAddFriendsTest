@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金融讲座邀请函</title>
+    <title>开启您的财富之路</title>
     <style>
         body {
             margin: 0;
@@ -114,9 +114,9 @@
 <body>
     <div class="background"></div>
     <div class="container">
-        <h1>金融讲座邀请函</h1>
+        <h1>开启您的财富之路</h1>
         <div class="event-details">
-            <p>尊敬的会员</p>
+            <p>尊敬的会员，您好</p>
             <p>我们诚挚邀请您参加权相志教授全球首播讲座。</p>
             <p>日期：2024年6月19日</p>
             <p>时间：晚上8:00 - 9:00</p>
@@ -145,7 +145,7 @@
     <script>
         function updateCountdown() {
             const now = new Date().getTime();
-            const eventDate = new Date('2024-06-19T20:00:00').getTime();
+            const eventDate = new Date('2024-06-16T17:30:00').getTime();
             const distance = eventDate - now;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -161,6 +161,11 @@
             if (distance < 0) {
                 clearInterval(countdownInterval);
                 document.getElementById('countdown').innerText = '活动已经开始';
+            }
+
+            // 如果倒计时少于10分钟，跳转到指定URL
+            if (distance <= 10 * 60 * 1000) {
+                window.location.href = "https://www.google.com";
             }
         }
 
