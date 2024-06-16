@@ -27,20 +27,20 @@
             width: 90%;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 20px;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
         .event-details {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 20px;
             line-height: 1.6;
         }
         #countdown {
             display: flex;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             margin-bottom: 20px;
         }
         .time-unit {
@@ -50,8 +50,24 @@
         }
         .time-unit span {
             display: block;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #ffd700;
+        }
+
+        /* 媒体查询：适配手机端 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .event-details {
+                font-size: 0.9rem;
+            }
+            #countdown {
+                font-size: 1.2rem;
+            }
+            .time-unit span {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
