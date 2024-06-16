@@ -10,46 +10,90 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
-            background: #121212;
-            color: #fff;
+            background: #0d0d0d;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
+            overflow: hidden;
         }
-        .invitation {
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-            max-width: 400px;
+        .container {
+            position: relative;
             width: 90%;
-            margin: 10px;
+            max-width: 400px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 15px;
-            color: #ffcc00;
+            color: #ff007f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #ff007f, #ffcc00);
+            bottom: -10px;
+            left: 0;
         }
         .event-details {
             font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
         #countdown {
             display: flex;
             justify-content: space-around;
             font-size: 1.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .time-unit {
             display: inline-block;
+            text-align: center;
         }
         .time-unit span {
             display: block;
             font-size: 2rem;
             color: #ffcc00;
+        }
+        .footer {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+            z-index: 0;
+            overflow: hidden;
+        }
+        .background::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, transparent, #ff007f, transparent, #ffcc00, transparent, #ff007f, transparent);
+            animation: rotateBackground 8s linear infinite;
+        }
+        @keyframes rotateBackground {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
         @media (max-width: 480px) {
             h1 {
@@ -68,7 +112,8 @@
     </style>
 </head>
 <body>
-    <div class="invitation">
+    <div class="background"></div>
+    <div class="container">
         <h1>金融讲座邀请函</h1>
         <div class="event-details">
             <p>亲爱的嘉宾，</p>
@@ -92,6 +137,7 @@
                 <span id="seconds">00</span>秒
             </div>
         </div>
+        <div class="footer">期待您的参与！</div>
     </div>
 
     <script>
