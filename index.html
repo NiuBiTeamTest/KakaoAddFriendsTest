@@ -1,49 +1,111 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金融讲座邀请函</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #fff;
             display: flex;
-            flex-direction: column;  /* 确保图片垂直排列 */
+            justify-content: center;
             align-items: center;
-            justify-content: flex-start;  /* 从顶部开始显示内容 */
-            background: #f0f0f0;
+            height: 100vh;
+            text-align: center;
         }
-        .fixed-bottom {
-            position: fixed;  /* 固定位置 */
-            bottom: 0;  /* 在页面底部 */
-            left: 0;  /* 左对齐 */
-            right: 0;  /* 右对齐 */
-            width: 100%;  /* 宽度100% */
-            max-width: 1024px;  /* 最大宽度为600px */
-            margin: 0 auto; /* 水平居中 */
+        .invitation {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            max-width: 600px;
+            width: 90%;
         }
-        img {
-            width: 100%;    /* 图片宽度为100% */
-            max-width: 1024px;    /* 最大宽度为600px */
-            height: auto;    /* 高度自动 */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
-        a {
-            text-decoration: none;  /* 移除链接下划线 */
-            border: none;  /* 移除链接边框 */
-            display: block;  /* 让链接占满整行，以包含整个图片 */
-            line-height: 0;  /* 移除链接周围的空白间距 */
-            margin: 0;  /* 移除任何默认的外边距 */
+        .event-details {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .time-unit {
+            display: inline-block;
+            margin: 0 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .time-unit span {
+            display: block;
+            font-size: 3rem;
+            color: #ffd700;
         }
     </style>
 </head>
 <body>
-    <a href="https://google.com" target="_blank">
-        <img src="1.png" alt="Promotional Image">
-    </a>
-        <img src="2.png" alt="Second Promotional Image">
-    <a href="https://google.com" target="_blank">
-        <img src="点击.png" class="fixed-bottom" alt="Promotional Image Bottom">
-    </a>
+    <div class="invitation">
+        <h1>金融讲座邀请函</h1>
+        <div class="event-details">
+            <p>亲爱的嘉宾，</p>
+            <p>我们诚挚邀请您参加我们的在线金融讲座。</p>
+            <p>日期：2024年6月20日</p>
+            <p>时间：晚上8点</p>
+            <p>讲座平台：Zoom</p>
+            <p>会议ID和密码将通过邮件发送给您。</p>
+        </div>
+        <div id="countdown">
+            <div class="time-unit">
+                <span id="days">00</span>天
+            </div>
+            <div class="time-unit">
+                <span id="hours">00</span>时
+            </div>
+            <div class="time-unit">
+                <span id="minutes">00</span>分
+            </div>
+            <div class="time-unit">
+                <span id="seconds">00</span>秒
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const eventDate = new Date('2024-06-20T20:00:00').getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerText = '活动已经开始';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // 初始化时立即调用一次
+    </script>
 </body>
 </html>
