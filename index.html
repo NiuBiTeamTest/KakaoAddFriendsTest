@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>开启您的财富之路</title>
+    <title>당신의 부의 길을 열어드 립니다</title>
     <style>
         body {
             margin: 0;
@@ -114,31 +114,30 @@
 <body>
     <div class="background"></div>
     <div class="container">
-        <h1>开启您的财富之路</h1>
+        <h1>당신의 부의 길을 열어드 립니다</h1>
         <div class="event-details">
-            <p>尊敬的会员，您好</p>
-            <p>我们诚挚邀请您参加权相志教授全球首播讲座。</p>
-            <p>日期：2024年6月19日</p>
-            <p>时间：晚上8:00 - 9:00</p>
-            <p>距离讲座倒计时</p>
+            <p>존경하는 회원여러분 안녕하세요!</p>
+            <p>Kwon Sam 교수님의 글로벌 라이브강의에 초대합니다.</p>
+            <p>날짜: 2024년 6월 19일</p>
+            <p>시간: 저녁 8시~ 9시</p>
+            <p>↓ 카운트다운 ↓</p>
         </div>
         <div id="countdown">
             <div class="time-unit">
-                <span id="days">00</span>天
+                <span id="days">00</span>일
             </div>
             <div class="time-unit">
-                <span id="hours">00</span>时
+                <span id="hours">00</span>시
             </div>
             <div class="time-unit">
-                <span id="minutes">00</span>分
+                <span id="minutes">00</span>분
             </div>
             <div class="time-unit">
-                <span id="seconds">00</span>秒
+                <span id="seconds">00</span>초
             </div>
         </div>
         <div class="footer">
-            <p>会议ID和密码将通过邮件发送给您。</p>
-            <p>期待您的参与！</p>
+            <p>여러분의 적극적인 참여를 기다립니다!</p>
         </div>
     </div>
 
@@ -160,13 +159,13 @@
 
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                document.getElementById('countdown').innerText = '活动已经开始';
+                document.getElementById('countdown').innerText = '강연이 이미 시작되었습니다.';
             }
 
             // 如果倒计时少于10分钟，跳转到指定URL
-            if (distance <= 10 * 60 * 1000) {
-                window.location.href = "https://www.google.com";
-            }
+            //if (distance <= 10 * 60 * 1000) {
+            //    window.location.href = "https://www.google.com";
+            //}
         }
 
         const countdownInterval = setInterval(updateCountdown, 1000);
